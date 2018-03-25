@@ -1,9 +1,15 @@
-$(NAME)
+$(NAME) = libft.a
+CFLAGS	= -Wall -Werror -Wextra -I. -c
+FILES	= *.c
+OBJ	= $(FILES:%.c=%.o)
 
-all
+all:	$(NAME)
 
-clean
+clean:
+	rm -f $(OBJ)
 
-fclean
+fclean:
+	clean
+	rm -f $(NAME)
 
-re
+re: fclean all
